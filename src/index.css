@@ -2,89 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
-
 @layer base {
   :root {
-    --background: 0 0% 7%;
+    --background: 240 10% 4%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 240 10% 6%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 10%;
+    --popover: 240 10% 5%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 263 70% 60%;
+    --primary: 263 70% 65%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 18%;
+    --secondary: 240 5% 15%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 240 5% 12%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 263 70% 60%;
+    --accent: 190 90% 60%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 18%;
-    --ring: 263 70% 60%;
+    --border: 240 5% 15%;
+    --input: 240 5% 15%;
+    --ring: 263 70% 65%;
 
-    --radius: 0.75rem;
-
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 263 70% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 263 70% 60%;
-  }
-
-  .dark {
-    --background: 0 0% 7%;
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 263 70% 60%;
-    --primary-foreground: 0 0% 100%;
-
-    --secondary: 0 0% 18%;
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 20%;
-    --muted-foreground: 0 0% 65%;
-
-    --accent: 263 70% 60%;
-    --accent-foreground: 0 0% 100%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 20%;
-    --input: 0 0% 18%;
-    --ring: 263 70% 60%;
-    
-    --sidebar-background: 0 0% 10%;
-    --sidebar-foreground: 0 0% 95%;
-    --sidebar-primary: 263 70% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 0 0% 18%;
-    --sidebar-accent-foreground: 0 0% 95%;
-    --sidebar-border: 0 0% 20%;
-    --sidebar-ring: 263 70% 60%;
+    --radius: 1rem;
   }
 }
 
@@ -95,133 +43,23 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    /* Performance optimizations for 120fps */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeSpeed;
-    /* Hide default cursor globally */
+    text-rendering: optimizeLegibility;
     cursor: none;
+    overflow-x: hidden;
+    font-family: 'Inter', sans-serif;
   }
 
-  /* Hide cursor on all interactive elements */
-  *, *:hover, *:focus, *:active {
+  *,
+  *:hover,
+  *:focus,
+  *:active {
     cursor: none !important;
   }
 
-  /* Hide Unicorn Studio watermark */
-  .unicorn-container a[href*="unicorn.studio"],
-  .unicorn-container div[class*="watermark"],
-  .unicorn-container div[style*="position: absolute"][style*="bottom"],
-  .unicorn-container > div > a {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-  }
-
-  /* Smooth scrolling for the entire page */
-  html {
-    scroll-behavior: smooth;
-    /* Base font size that will scale everything proportionally */
-    font-size: 16px;
-  }
-
-  /* Responsive scaling for different devices - MUCH BIGGER for mobile/tablet */
-  @media (max-width: 640px) {
-    /* Mobile phones - SIGNIFICANTLY INCREASED */
-    html {
-      font-size: clamp(16px, 4vw, 20px);
-    }
-  }
-
-  @media (min-width: 641px) and (max-width: 768px) {
-    /* Tablets portrait - INCREASED */
-    html {
-      font-size: clamp(16px, 3vw, 18px);
-    }
-  }
-
-  @media (min-width: 769px) and (max-width: 1024px) {
-    /* Tablets landscape - INCREASED */
-    html {
-      font-size: clamp(16px, 2.5vw, 18px);
-    }
-  }
-
-  @media (min-width: 1025px) and (max-width: 1440px) {
-    /* Small desktops/laptops */
-    html {
-      font-size: 16px;
-    }
-  }
-
-  @media (min-width: 1441px) and (max-width: 1920px) {
-    /* Large desktops */
-    html {
-      font-size: clamp(16px, 1.2vw, 18px);
-    }
-  }
-
-  @media (min-width: 1921px) {
-    /* Ultra-wide/4K displays */
-    html {
-      font-size: clamp(17px, 1.1vw, 20px);
-    }
-  }
-
-  /* Ensure body takes full height */
-  body {
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
-
-  /* Force minimum readable sizes on mobile */
-  @media (max-width: 640px) {
-    /* All text elements get minimum readable sizes */
-    h1 {
-      font-size: clamp(2rem, 8vw, 4rem) !important;
-    }
-    h2 {
-      font-size: clamp(1.75rem, 6vw, 3rem) !important;
-    }
-    h3 {
-      font-size: clamp(1.5rem, 5vw, 2.5rem) !important;
-    }
-    h4 {
-      font-size: clamp(1.25rem, 4vw, 2rem) !important;
-    }
-    p, span, div {
-      font-size: clamp(1rem, 3vw, 1.25rem);
-    }
-    button, a {
-      font-size: clamp(1rem, 3vw, 1.25rem);
-    }
-  }
-
-  @media (min-width: 641px) and (max-width: 1024px) {
-    /* Tablets */
-    h1 {
-      font-size: clamp(2.5rem, 6vw, 4.5rem) !important;
-    }
-    h2 {
-      font-size: clamp(2rem, 5vw, 3.5rem) !important;
-    }
-    h3 {
-      font-size: clamp(1.75rem, 4vw, 3rem) !important;
-    }
-    h4 {
-      font-size: clamp(1.5rem, 3.5vw, 2.5rem) !important;
-    }
-    p, span, div {
-      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    }
-    button, a {
-      font-size: clamp(1.125rem, 2.5vw, 1.5rem);
-    }
-  }
-
-  /* Custom scrollbar styling */
   ::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   ::-webkit-scrollbar-track {
@@ -229,45 +67,101 @@ All colors MUST be HSL.
   }
 
   ::-webkit-scrollbar-thumb {
-    background: hsl(var(--primary));
-    border-radius: 4px;
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 10px;
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(var(--primary) / 0.8);
+    background: hsl(var(--primary));
   }
-  
-  /* Animation keyframes */
-  @keyframes float {
-    0%, 100% {
-      transform: translate3d(0, 0, 0);
-    }
-    50% {
-      transform: translate3d(0, -20px, 0);
-    }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl transition-all duration-500 hover:bg-white/10 hover:border-white/20;
   }
-  
-  @keyframes gradient {
-    0%, 100% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5), 0 0 40px hsl(var(--primary) / 0.3);
   }
-  
-  /* Performance optimizations for specific elements */
-  canvas,
-  video,
-  img {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translate3d(0, 0, 0);
+
+  .accent-glow {
+    text-shadow: 0 0 20px hsl(var(--accent) / 0.5), 0 0 40px hsl(var(--accent) / 0.3);
   }
-  
-  /* Optimize animations */
-  [class*="animate-"],
-  [style*="animation"] {
-    will-change: transform, opacity;
+
+  .designer-grid {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Animations Overrides & Extensions */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.orb {
+  position: absolute;
+  filter: blur(100px);
+  border-radius: 50%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb-1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, hsl(var(--primary) / 0.2) 0%, transparent 70%);
+  top: -10%;
+  left: -10%;
+  animation: float 20s infinite ease-in-out;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, hsl(var(--accent) / 0.15) 0%, transparent 70%);
+  bottom: 0%;
+  right: -5%;
+  animation: float 15s infinite ease-in-out reverse;
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #050510, #0a0a25, #0a0515, #050510);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
+}
+
+/* 8px Grid System Utilities */
+.m-8px {
+  margin: 8px;
+}
+
+.p-8px {
+  padding: 8px;
+}
+
+.gap-8px {
+  gap: 8px;
+}
+
+/* Accessible Animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

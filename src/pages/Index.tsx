@@ -1,4 +1,4 @@
-import { Code2, Music, Volume2, VolumeX, Volume1, GraduationCap, Award, Briefcase, Globe, Github, Linkedin, Mail, Sparkles, Rocket, Terminal, Brain, Zap, Star, TrendingUp, Coffee, Lightbulb, Target } from 'lucide-react';
+import { Code2, Music, Volume2, VolumeX, Volume1, GraduationCap, Award, Briefcase, Globe, Github, Linkedin, Mail, Sparkles, Rocket, Terminal, Brain, Zap, Star, TrendingUp, Coffee, Lightbulb, Target, Cloud, BarChart3 } from 'lucide-react';
 import { useState, useEffect, useRef, useMemo, useCallback } from 'react';
 import PixelCard from '@/components/PixelCard';
 import ElasticSlider from '@/components/ElasticSlider';
@@ -32,7 +32,7 @@ const Index = () => {
       audio.preload = 'auto';
       document.body.appendChild(audio);
     }
-    
+
     audioRef.current = audio;
     audio.volume = volumeLevel / 100;
 
@@ -154,12 +154,22 @@ const Index = () => {
       href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/Screenshot 2025-10-12 173419.png'
     },
     {
-      icon: Globe,
-      title: 'CISCO Virtual Internship',
-      company: 'CISCO',
-      date: 'July 2025',
-      description: 'Completed comprehensive programs in Introduction to Cyber Security and Network Essentials, gaining hands-on experience with network protocols, security fundamentals, and infrastructure management.',
-      skills: ['Network Security', 'Protocols', 'Infrastructure', 'Cybersecurity']
+      icon: Cloud,
+      title: 'Microsoft Azure Internship',
+      company: 'Microsoft',
+      date: 'Sept 2025',
+      description: 'Gained hands-on experience with Azure cloud services, exploring cloud architecture, deployment strategies, and high-availability systems.',
+      skills: ['Azure', 'Cloud Computing', 'Infrastructure', 'Deployment'],
+      href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/certificates/Microsoft%20Azure%20Internship%20Certificate.png'
+    },
+    {
+      icon: BarChart3,
+      title: 'Power BI – For Business Applications',
+      company: 'Business Applications',
+      date: 'Oct 2025',
+      description: 'Developed interactive dashboards and reports using Power BI to visualize complex data sets and drive business decisions.',
+      skills: ['Power BI', 'Data Visualization', 'DAX', 'Business Analytics'],
+      href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/certificates/Power%20BI%20%E2%80%93%20For%20Business%20Applications%20Internship%20Certificate.png'
     },
     {
       icon: Rocket,
@@ -167,7 +177,16 @@ const Index = () => {
       company: 'Viswam AI, IIIT-Hyderabad',
       date: 'March 2025',
       description: 'Participated in collaborative AI development projects under mentorship of IIITH faculty. Gained practical experience in ML model development, open-source tools, and research methodologies.',
-      skills: ['AI Development', 'Research', 'Collaboration', 'Open Source']
+      skills: ['AI Development', 'Research', 'Collaboration', 'Open Source'],
+      href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/certificates/certificate of participation.png'
+    },
+    {
+      icon: Globe,
+      title: 'CISCO Virtual Internship',
+      company: 'CISCO',
+      date: 'July 2025',
+      description: 'Completed comprehensive programs in Introduction to Cyber Security and Network Essentials, gaining hands-on experience with network protocols, security fundamentals, and infrastructure management.',
+      skills: ['Network Security', 'Protocols', 'Infrastructure', 'Cybersecurity']
     }
   ], []);
 
@@ -179,22 +198,28 @@ const Index = () => {
   }), []);
 
   const certifications = useMemo(() => [
+    { name: 'Vibe Hack', org: 'HackwithIndia', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/certificates/hack%20wiht%20india.png' },
+    { name: '5-Day AI Agents Intensive Course', org: 'Kaggle & Google', href: '#' },
+    { name: 'Tata - GenAI Data Analytics', org: 'Forage', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/certificates/Forage%20Tata%20gen%20ai%20powered%20data%20analytics%20job%20simulation.png' },
+    { name: 'Adobe India Hackathon - MCQ', org: 'Unstop', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/certificates/adobe%20unstop%20hackathon.png' },
+    { name: 'HP Certified Data Analytics', org: 'HP LIFE', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/certificates/HP%20data%20science%20and%20analystics.png' },
+    { name: 'Gemini Certified Educator', org: 'Google', href: '#' },
+    { name: 'Gemini Certified University Student', org: 'Google', href: '#' },
+    { name: 'Machine Learning with Python', org: 'freeCodeCamp', href: 'https://www.freecodecamp.org/certification/shishir_katakam/machine-learning-with-python' },
     { name: 'Neo4j Certified Professional', org: 'Neo4j', href: 'https://graphacademy.neo4j.com/c/f5f586e2-cba3-4ad4-bf3a-dea4bed55d4b/' },
     { name: 'Data Analyst Certification', org: 'OneRoadmap', href: 'https://oneroadmap.io/skills/da/certificate/CERT-A07318AE' },
-    { name: 'AWS Solutions Architecture', org: 'Forage', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/image.png' },
-    { name: 'Deloitte Cyber Security', org: 'Forage', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/Screenshot 2025-10-12 173902.png' },
+    { name: 'AWS - Solutions Architecture', org: 'Forage', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/image.png' },
+    { name: 'Deloitte Australia - Cyber', org: 'Forage', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/Screenshot 2025-10-12 173902.png' },
     { name: 'Introduction to Cybersecurity', org: 'Cisco Networking Academy', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/Screenshot 2025-10-12 174119.png' },
-    { name: 'Generative AI & LLMs', org: 'Google', href: null },
     { name: 'Elements of AI', org: 'University of Helsinki', href: 'https://raw.githubusercontent.com/shishir-katakam/portfolio/main/public/Screenshot 2025-10-12 173648.png' }
   ], []);
 
   // Intro Screen
   if (showIntro) {
     return (
-      <div 
-        className={`fixed inset-0 z-[9999] transition-opacity duration-800 ${
-          isEntering ? 'opacity-0' : 'opacity-100'
-        }`}
+      <div
+        className={`fixed inset-0 z-[9999] transition-opacity duration-800 ${isEntering ? 'opacity-0' : 'opacity-100'
+          }`}
         style={{
           position: 'relative',
           overflow: 'hidden',
@@ -206,18 +231,18 @@ const Index = () => {
         }}
       >
         {/* TargetCursor for intro screen */}
-        <TargetCursor 
+        <TargetCursor
           key="intro-cursor"
           spinDuration={2}
           hideDefaultCursor={true}
         />
 
         {/* LightRays WebGL Background */}
-        <div style={{ 
-          width: '100%', 
-          height: '100%', 
-          position: 'absolute', 
-          top: 0, 
+        <div style={{
+          width: '100%',
+          height: '100%',
+          position: 'absolute',
+          top: 0,
           left: 0,
           transform: 'translateZ(0)',
           backfaceVisibility: 'hidden',
@@ -251,7 +276,7 @@ const Index = () => {
             }}>
               Shishir Katakam
             </h1>
-            <p className="text-2xl md:text-3xl text-white/80 mb-12 animate-fade-in drop-shadow-lg" style={{ 
+            <p className="text-2xl md:text-3xl text-white/80 mb-12 animate-fade-in drop-shadow-lg" style={{
               animationDelay: '0.2s',
               transform: 'translateZ(0)',
               backfaceVisibility: 'hidden',
@@ -264,7 +289,7 @@ const Index = () => {
             <button
               onClick={handleEnterSite}
               className="cursor-target group relative px-12 py-6 bg-white text-black rounded-full font-bold text-xl overflow-hidden hover:scale-110 transition-all duration-300 cursor-pointer animate-fade-in shadow-2xl"
-              style={{ 
+              style={{
                 animationDelay: '0.4s',
                 transform: 'translateZ(0)',
                 backfaceVisibility: 'hidden',
@@ -290,7 +315,7 @@ const Index = () => {
   return (
     <div className="min-h-screen relative overflow-x-hidden" style={{ background: '#000000' }}>
       {/* TargetCursor - separate instance for main site */}
-      <TargetCursor 
+      <TargetCursor
         key="main-cursor"
         spinDuration={2}
         hideDefaultCursor={true}
@@ -307,17 +332,17 @@ const Index = () => {
           backgroundSize: '400% 400%',
           animation: 'gradientShift 15s ease infinite'
         }} />
-        
+
         {/* Floating orbs */}
         <div className="orb orb-1" />
         <div className="orb orb-2" />
         <div className="orb orb-3" />
-        
+
         {/* Particle grid */}
         <div className="particle-grid">
           {[...Array(20)].map((_, i) => (
-            <div 
-              key={i} 
+            <div
+              key={i}
               className="grid-particle"
               style={{
                 left: `${Math.random() * 100}%`,
@@ -328,19 +353,19 @@ const Index = () => {
             />
           ))}
         </div>
-        
+
         {/* Overlay gradient for contrast */}
-        <div style={{ 
-          position: 'absolute', 
-          top: 0, 
-          left: 0, 
-          width: '100%', 
-          height: '100%', 
-          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%)', 
-          pointerEvents: 'none' 
+        <div style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%)',
+          pointerEvents: 'none'
         }} />
       </div>
-          
+
       {/* Floating Particles - Minimal */}
       <div className="fixed inset-0 pointer-events-none" style={{ zIndex: 2 }}>
         {[...Array(5)].map((_, i) => (
@@ -374,16 +399,22 @@ const Index = () => {
 
       {/* Main Content */}
       <div className="relative" style={{ zIndex: 10 }}>
-        
+
         {/* HERO SECTION - Epic Entrance */}
         <section className="min-h-0 md:min-h-screen flex flex-col items-center justify-center px-8 md:px-16 lg:px-24 py-16 md:py-0 relative">
-          
-          {/* Animated Background Orbs - Optimized */}
-          <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse will-change-transform" />
-          <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-white/5 rounded-full blur-3xl animate-pulse will-change-transform" style={{ animationDelay: '1s' }} />
 
-          <div className="max-w-6xl mx-auto text-center relative">
-            
+          {/* Aurora Background for Hero */}
+          <div className="absolute inset-0 z-0">
+            <Aurora
+              colorStops={["#3A29FF", "#FF29B5", "#29FFFF"]}
+              blend={0.5}
+              amplitude={1.0}
+              speed={0.5}
+            />
+          </div>
+
+          <div className="max-w-6xl mx-auto text-center relative z-10">
+
             {/* Status Badge */}
             <FadeContent blur={false} duration={600} easing="ease-out" initialOpacity={0}>
               <div className="inline-flex items-center px-4 md:px-6 py-2 md:py-3 mb-6 md:mb-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-full cursor-target group hover:scale-105 transition-transform will-change-transform">
@@ -430,7 +461,7 @@ const Index = () => {
             {/* Subtitle */}
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={600}>
               <p className="text-lg sm:text-xl md:text-2xl text-white/80 mb-8 md:mb-12 max-w-4xl mx-auto leading-relaxed">
-                Second-year <span className="font-bold text-white">IT student at MGIT</span>, passionate about transforming ideas into 
+                Second-year <span className="font-bold text-white">IT student at MGIT</span>, passionate about transforming ideas into
                 <span className="text-white/90"> intelligent solutions</span> that make a real-world impact.
               </p>
             </FadeContent>
@@ -471,19 +502,19 @@ const Index = () => {
 
         {/* FEATURED PROJECTS - Compact & Clean */}
         <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
-          
+
           <div className="max-w-7xl mx-auto">
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
-              <div className="text-left mb-8 md:mb-12 lg:mb-16">
-                <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-4">
+              <div className="text-left mb-12 lg:mb-20">
+                <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-6 tracking-widest backdrop-blur-md">
                   FEATURED WORK
                 </span>
-                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 md:mb-6 flex items-center">
-                  <Rocket className="mr-4 md:mr-6 text-white/90" size={48} />
-                  Flagship Projects
+                <h2 className="text-5xl md:text-7xl lg:text-9xl font-black text-white mb-6 flex items-center glow-text">
+                  <Rocket className="mr-6 md:mr-8 text-primary animate-pulse" size={64} />
+                  Flagship
                 </h2>
-                <p className="text-lg md:text-xl lg:text-2xl text-white/70 max-w-3xl">
-                  Production-ready applications serving real users and solving real problems.
+                <p className="text-xl md:text-2xl lg:text-3xl text-white/60 max-w-3xl leading-relaxed">
+                  Production-ready applications serving <span className="text-white font-bold">real users</span> and solving complex problems.
                 </p>
               </div>
             </FadeContent>
@@ -540,16 +571,16 @@ const Index = () => {
         <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           <div className="max-w-7xl mx-auto">
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
-              <div className="text-right mb-8 md:mb-12 lg:mb-16">
-                <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-4">
+              <div className="text-right mb-12 lg:mb-20">
+                <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-6 tracking-widest backdrop-blur-md">
                   INNOVATION LAB
                 </span>
-                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 md:mb-6 flex items-center justify-end">
-                  Experimental Projects
-                  <Terminal className="ml-4 md:ml-6 text-white/90" size={48} />
+                <h2 className="text-5xl md:text-7xl lg:text-9xl font-black text-white mb-6 flex items-center justify-end accent-glow">
+                  Experimental
+                  <Terminal className="ml-6 md:ml-8 text-accent animate-bounce" size={64} />
                 </h2>
-                <p className="text-lg md:text-xl lg:text-2xl text-white/70 max-w-3xl ml-auto">
-                  Pushing boundaries with cutting-edge tech and creative solutions.
+                <p className="text-xl md:text-2xl lg:text-3xl text-white/60 max-w-3xl ml-auto leading-relaxed">
+                  Pushing boundaries with <span className="text-white font-bold">cutting-edge tech</span> and creative code experiments.
                 </p>
               </div>
             </FadeContent>
@@ -592,13 +623,13 @@ const Index = () => {
         <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           <div className="max-w-7xl mx-auto">
             <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
-              <div className="text-center mb-10 md:mb-16 lg:mb-20">
-                <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-4">
+              <div className="text-center mb-16 lg:mb-24">
+                <span className="inline-block px-4 py-2 bg-white/10 border border-white/20 rounded-full text-white/90 text-sm font-semibold mb-8 tracking-widest backdrop-blur-md">
                   PROFESSIONAL JOURNEY
                 </span>
-                <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-white mb-4 md:mb-6">
-                  <Briefcase className="inline-block mr-4 md:mr-6 text-white/90" size={48} />
-                  Experience
+                <h2 className="text-6xl md:text-8xl lg:text-9xl font-black text-white mb-8 glow-text">
+                  <Briefcase className="inline-block mr-8 text-primary" size={64} />
+                  Journey
                 </h2>
               </div>
             </FadeContent>
@@ -607,7 +638,7 @@ const Index = () => {
               {internships.map((internship, index) => {
                 const content = (
                   <FadeContent key={index} blur={false} duration={500} easing="ease-out" initialOpacity={0} delay={200 + index * 150}>
-                    <div className="relative cursor-target group">
+                    <div className="relative cursor-target group h-full">
                       <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-2xl blur-xl transition-opacity duration-500"></div>
                       <div className="relative p-5 bg-white/5 backdrop-blur-xl border border-white/10 rounded-xl hover:bg-white/10 hover:border-white/30 transition-all group-hover:scale-105 will-change-transform h-full flex flex-col">
                         <div className="flex items-center justify-between mb-3">
@@ -635,7 +666,7 @@ const Index = () => {
                             ))}
                           </div>
                           {internship.href && (
-                            <div className="inline-block">
+                            <div className="inline-block w-fit">
                               <div className="px-2.5 py-1 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-md">
                                 <span className="text-white text-xs font-bold flex items-center">
                                   Click to view →
@@ -709,7 +740,7 @@ const Index = () => {
         <section className="px-8 md:px-16 lg:px-24 py-12 md:py-20 lg:py-32 relative">
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-              
+
               {/* Education */}
               <FadeContent blur={false} duration={500} easing="ease-out" initialOpacity={0}>
                 <div>
@@ -720,7 +751,7 @@ const Index = () => {
                     <GraduationCap className="mr-3 text-white/90" size={36} />
                     Academic Path
                   </h2>
-                  
+
                   <div className="space-y-4">
                     <div className="cursor-target group">
                       <div className="relative">
@@ -742,7 +773,7 @@ const Index = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     <div className="cursor-target group">
                       <div className="relative">
                         <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-xl blur-lg transition-opacity duration-500"></div>
@@ -769,17 +800,19 @@ const Index = () => {
                     <Award className="mr-3 text-white/90" size={36} />
                     Certifications
                   </h2>
-                  
+
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {certifications.map((cert, i) => {
                       const content = (
-                        <div className="relative">
+                        <div className="relative h-full">
                           <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 rounded-lg blur-lg transition-opacity duration-500"></div>
-                          <div className="relative p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all h-full group-hover:scale-105 will-change-transform">
-                            <h4 className="text-white font-bold text-sm mb-1 leading-tight line-clamp-1">{cert.name}</h4>
-                            <p className="text-white/50 text-[10px] font-medium mb-2">{cert.org}</p>
+                          <div className="relative p-3 bg-white/5 backdrop-blur-xl border border-white/10 rounded-lg hover:bg-white/10 hover:border-white/30 transition-all h-full group-hover:scale-105 will-change-transform flex flex-col justify-between">
+                            <div>
+                              <h4 className="text-white font-bold text-sm mb-1 leading-tight line-clamp-1">{cert.name}</h4>
+                              <p className="text-white/50 text-[10px] font-medium mb-2">{cert.org}</p>
+                            </div>
                             {cert.href && (
-                              <div className="inline-block">
+                              <div className="inline-block mt-auto w-fit">
                                 <div className="px-2 py-0.5 bg-white/30 backdrop-blur-xl border-2 border-white/50 rounded-md">
                                   <p className="text-white text-[10px] font-bold flex items-center">
                                     Click to view →
@@ -792,11 +825,11 @@ const Index = () => {
                       );
 
                       return cert.href ? (
-                        <a key={i} href={cert.href} target="_blank" rel="noopener noreferrer" className="cursor-target group block">
+                        <a key={i} href={cert.href} target="_blank" rel="noopener noreferrer" className="cursor-target group block h-full">
                           {content}
                         </a>
                       ) : (
-                        <div key={i} className="cursor-target group">
+                        <div key={i} className="cursor-target group h-full">
                           {content}
                         </div>
                       );
@@ -815,7 +848,7 @@ const Index = () => {
             <p className="text-white/50 text-sm">
               © 2025 Shishir Katakam. Crafted with <span className="text-red-400">♥</span> and lots of <Coffee className="inline" size={14} />
             </p>
-        </div>
+          </div>
         </footer>
 
       </div>

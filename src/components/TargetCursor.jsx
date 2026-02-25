@@ -71,9 +71,9 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       }
       spinTl.current = gsap
         .timeline({ repeat: -1 })
-        .to(cursor, { 
-          rotation: '+=360', 
-          duration: spinDuration, 
+        .to(cursor, {
+          rotation: '+=360',
+          duration: spinDuration,
           ease: 'none',
           force3D: true,
           transformOrigin: '50% 50%'
@@ -278,9 +278,9 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
             spinTl.current.kill();
             spinTl.current = gsap
               .timeline({ repeat: -1 })
-              .to(cursorRef.current, { 
-                rotation: '+=360', 
-                duration: spinDuration, 
+              .to(cursorRef.current, {
+                rotation: '+=360',
+                duration: spinDuration,
                 ease: 'none',
                 force3D: true
               });
@@ -333,9 +333,9 @@ const TargetCursor = ({ targetSelector = '.cursor-target', spinDuration = 2, hid
       spinTl.current.kill();
       spinTl.current = gsap
         .timeline({ repeat: -1 })
-        .to(cursorRef.current, { 
-          rotation: '+=360', 
-          duration: spinDuration, 
+        .to(cursorRef.current, {
+          rotation: '+=360',
+          duration: spinDuration,
           ease: 'none',
           force3D: true
         });
